@@ -19,20 +19,23 @@ const InputWrapper = styled.View`
 
 const Label = styled(StyledText)`
   flex: 0.5;
-  padding-top: 10;
+  padding-top: ${hp("2.0%")};
   font-family: "Raleway-Regular";
+  font-weight: 400;
+  font-size: ${hp("3.0%")};
   color: #000;
   text-align: center;
 `;
 
 const Field = styled.TextInput`
-  flex: 1;
+  flex: 0.75;
   font-family: "Raleway-Regular";
-  font-size: ${hp("2.5%")};
+  font-size: ${hp("3.0%")};
   color: #000;
   border-bottom-width: 1;
   border-color: #000;
   padding-bottom: 0;
+  margin-right: 5;
 `;
 
 const Input = ({

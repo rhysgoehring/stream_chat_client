@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { KeyboardAvoidingView } from "react-native";
+import { connect } from "react-redux";
+import { signInUser } from "../../actions";
 import {
   FlexScreenContainer,
   StyledText,
@@ -17,11 +18,15 @@ import {
   heightPercentage as hp
 } from "../../styles/dimensions";
 
-const SignInScreen = () => {
+const SignInScreen = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  console.log("username", username);
-  console.log("password", password);
+  console.log("props", props);
+  const handleSubmit = () => {
+    // TODO: Validate inputs
+    props.signInUser(username, password);
+  };
+
   return (
     <FlexScreenContainer>
       <HeaderText marginTop={hp("10.0%")}>Sign In</HeaderText>
@@ -47,7 +52,7 @@ const SignInScreen = () => {
         />
       </KeyboardView>
       <ButtonRow style={{ flex: 1 }}>
-        <Button>
+        <Button onPress={handleSubmit}>
           <ButtonText>Sign In</ButtonText>
         </Button>
         <Button>
@@ -58,4 +63,13 @@ const SignInScreen = () => {
   );
 };
 
-export default SignInScreen;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { signInUser }
+)(SignInScreen);
