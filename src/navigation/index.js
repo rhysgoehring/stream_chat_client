@@ -9,10 +9,10 @@ const AuthStack = createStackNavigator(
     LandingScreen: {
       screen: LandingScreen
     },
-    SignUpScreen: {
+    SignInScreen: {
       screen: SignInScreen
     },
-    SignInScreen: {
+    SignUpScreen: {
       screen: SignUpScreen
     }
   },

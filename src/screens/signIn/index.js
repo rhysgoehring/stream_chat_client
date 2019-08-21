@@ -1,11 +1,23 @@
 import React from "react";
-import { SafeAreaView, Text } from "react-native";
+import {
+  FlexScreenContainer,
+  StyledText,
+  LogoText,
+  ButtonRow,
+  Button,
+  ButtonText
+} from "../../components/common";
+
+import {
+  widthPercentage as wp,
+  heightPercentage as hp
+} from "../../styles/dimensions";
 
 const SignInScreen = () => {
   return (
-    <SafeAreaView>
-      <Text>Sign In Screen</Text>
-    </SafeAreaView>
+    <FlexScreenContainer>
+      <StyledText>Sign In Screen</StyledText>
+    </FlexScreenContainer>
   );
 };
 
