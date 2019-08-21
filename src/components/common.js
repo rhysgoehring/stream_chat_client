@@ -6,6 +6,7 @@ import {
 
 const FlexScreenContainer = styled.SafeAreaView`
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -22,7 +23,7 @@ const StyledText = styled.Text`
   text-align: center;
 `;
 
-const LogoText = styled(StyledText)`
+const HeaderText = styled(StyledText)`
   font-size: ${hp("7.0%")};
   text-align: center;
 `;
@@ -51,12 +52,18 @@ const ButtonText = styled(StyledText)`
   font-weight: 400;
   font-size: ${hp("4.0%")};
 `;
+const KeyboardView = styled.KeyboardAvoidingView`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
 export {
   FlexScreenContainer,
   StyledText,
-  LogoText,
+  HeaderText,
   ButtonRow,
   Button,
-  ButtonText
+  ButtonText,
+  KeyboardView
 };

@@ -2,7 +2,7 @@ import React from "react";
 import {
   FlexScreenContainer,
   StyledText,
-  LogoText,
+  HeaderText,
   ButtonRow,
   Button,
   ButtonText
@@ -16,7 +16,7 @@ import {
 const LandingScreen = ({ navigation }) => {
   return (
     <FlexScreenContainer>
-      <LogoText marginBottom={hp("20%")}>StreamChat</LogoText>
+      <HeaderText marginBottom={hp("20%")}>StreamChat</HeaderText>
       <ButtonRow>
         <Button onPress={() => navigation.push("SignInScreen")}>
           <ButtonText>Sign In</ButtonText>
