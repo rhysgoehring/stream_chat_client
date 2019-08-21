@@ -43,6 +43,7 @@
 		87EC02639A6F4B94ACF4DAAD /* libRNCNetInfo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D52E9F248741D9B4596EC3 /* libRNCNetInfo-tvOS.a */; };
 		31F1B946600E44CCA88AB54E /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5B75334FE8457BAF6EA1B9 /* libRNGestureHandler.a */; };
 		2F79C1A65DC140D49546A6AB /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4C50890D9140838FC78CBD /* libRNGestureHandler-tvOS.a */; };
+		2733F66A83C6481680D93E76 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A7AF4A0B22F42A8BC3953AC /* Raleway-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +357,7 @@
 		B7A4C206E06A4694AD6E5009 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		FF5B75334FE8457BAF6EA1B9 /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		3A4C50890D9140838FC78CBD /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; name = "libRNGestureHandler-tvOS.a"; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0A7AF4A0B22F42A8BC3953AC /* Raleway-Regular.ttf */ = {isa = PBXFileReference; name = "Raleway-Regular.ttf"; path = "../assets/fonts/Raleway/Raleway-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,6 +602,7 @@
 				00E356EF1AD99517003FC87E /* stream_chat_clientTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				158B2AF189854003B4C71894 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -625,6 +628,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		158B2AF189854003B4C71894 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				0A7AF4A0B22F42A8BC3953AC /* Raleway-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1072,6 +1084,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				2733F66A83C6481680D93E76 /* Raleway-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
