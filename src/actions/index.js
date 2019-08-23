@@ -1,9 +1,8 @@
 import axios from "axios";
-import { StreamChat } from "stream-chat";
 import { AsyncStorage } from "react-native";
 import NavigationService from "../navigation/navigationService";
 import { SIGN_IN, SIGN_UP } from "./types";
-import { STREAM_KEY } from "../config";
+import chatClient from "../chatClient";
 
 const ROOT_URL = "http://10.0.0.113:4000";
 
@@ -23,7 +22,6 @@ const signInUser = (username, password) => async dispatch => {
       username: data.username
     };
     // Initialize StreamChat and set user:
-    const chatClient = await new StreamChat(STREAM_KEY);
     await chatClient.setUser(
       {
         id: user._id,
@@ -62,7 +60,6 @@ const signUpUser = (username, password) => async dispatch => {
     };
 
     // Initialize StreamChat and set user:
-    const chatClient = await new StreamChat(STREAM_KEY);
     await chatClient.setUser(
       {
         id: user._id,
