@@ -21,7 +21,6 @@ import {
 const SignInScreen = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  console.log("props", props);
   const handleSubmit = () => {
     // TODO: Validate inputs
     props.signInUser(username, password);

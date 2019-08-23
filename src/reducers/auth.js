@@ -13,11 +13,7 @@ export default function(state = iniitalState, action) {
     case SIGN_IN:
       return {
         ...state,
-        // user: {
-        //   _id: action.data._id,
-        //   username: action.data.username
-        // }
-        user: action.data
+        user: action.user
       };
     default:
       return { ...state };
