@@ -1,8 +1,10 @@
+import React from "react";
 import {
   createStackNavigator,
   createAppContainer,
   createBottomTabNavigator
 } from "react-navigation";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
 import LandingScreen from "../screens/landing";
 import SignInScreen from "../screens/signIn";
@@ -32,19 +34,28 @@ const TabNav = createBottomTabNavigator(
     ChannelScreen: {
       screen: ChannelScreen,
       navigationOptions: {
-        tabBarLabel: "Channels"
+        tabBarLabel: "Channels",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="stream" size={18} color={tintColor} />
+        )
       }
     },
     HomeScreen: {
       screen: HomeScreen,
       navigationOptions: {
-        tabBarLabel: "Home"
+        tabBarLabel: "Home",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="home" size={18} color={tintColor} />
+        )
       }
     },
     UserInfoScreen: {
       screen: UserInfoScreen,
       navigationOptions: {
-        tabBarLabel: "User Info"
+        tabBarLabel: "User Info",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="user-cog" size={18} color={tintColor} />
+        )
       }
     }
   },
