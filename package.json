@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "reset": "watchman watch-del-all && watchman watch-del-all && npm start -- --reset-cache",
     "test": "jest"
   },
   "rnpm": {

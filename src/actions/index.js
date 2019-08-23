@@ -1,4 +1,5 @@
 import axios from "axios";
+import { NavigationActions } from "react-navigation";
 import { StreamChat } from "stream-chat";
 import { AsyncStorage } from "react-native";
 import { SIGN_IN, SIGN_UP } from "./types";
