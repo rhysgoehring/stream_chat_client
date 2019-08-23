@@ -1,4 +1,4 @@
-import { SIGN_IN } from "../actions/types";
+import { SIGN_IN, SIGN_UP } from "../actions/types";
 
 const iniitalState = {
   user: {
@@ -11,6 +11,11 @@ const iniitalState = {
 export default function(state = iniitalState, action) {
   switch (action.type) {
     case SIGN_IN:
+      return {
+        ...state,
+        user: action.user
+      };
+    case SIGN_UP:
       return {
         ...state,
         user: action.user

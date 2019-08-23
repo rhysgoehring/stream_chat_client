@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { signInUser } from "../../actions";
 import {
   FlexScreenContainer,
-  StyledText,
   HeaderText,
   ButtonRow,
   Button,
@@ -13,10 +12,7 @@ import {
 
 import Input from "../../components/input";
 
-import {
-  widthPercentage as wp,
-  heightPercentage as hp
-} from "../../styles/dimensions";
+import { heightPercentage as hp } from "../../styles/dimensions";
 
 const SignInScreen = props => {
   const [username, setUsername] = useState("");
@@ -54,7 +50,7 @@ const SignInScreen = props => {
         <Button onPress={handleSubmit}>
           <ButtonText>Sign In</ButtonText>
         </Button>
-        <Button>
+        <Button onPress={() => props.navigation.goBack()}>
           <ButtonText>Back</ButtonText>
         </Button>
       </ButtonRow>
@@ -62,13 +58,7 @@ const SignInScreen = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    auth: state.auth
-  };
-};
-
 export default connect(
-  mapStateToProps,
+  null,
   { signInUser }
 )(SignInScreen);

@@ -1,12 +1,64 @@
-import React from "react";
-import { SafeAreaView, Text } from "react-native";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { signUpUser } from "../../actions";
+import {
+  FlexScreenContainer,
+  HeaderText,
+  ButtonRow,
+  Button,
+  ButtonText,
+  KeyboardView
+} from "../../components/common";
 
-const SignUpScreen = () => {
+import Input from "../../components/input";
+
+import { heightPercentage as hp } from "../../styles/dimensions";
+
+const SignUpScreen = props => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = () => {
+    // TODO: Validate inputs
+    props.signUpUser(username, password);
+  };
+
   return (
-    <SafeAreaView>
-      <Text>Sign Up Screen</Text>
-    </SafeAreaView>
+    <FlexScreenContainer>
+      <HeaderText marginTop={hp("10.0%")}>Sign Up</HeaderText>
+      <KeyboardView behavior="padding">
+        <Input
+          label="Username"
+          autoCapitalize="none"
+          autoCorrect={false}
+          value={username}
+          onChangeText={text => setUsername(text)}
+          maxLength={15}
+          marginTop={hp("5.0%")}
+        />
+        <Input
+          label="Password"
+          autoCapitalize="none"
+          autoCorrect={false}
+          secureTextEntry
+          value={password}
+          onChangeText={text => setPassword(text)}
+          maxLength={50}
+          marginTop={hp("5.0%")}
+        />
+      </KeyboardView>
+      <ButtonRow style={{ flex: 1 }}>
+        <Button onPress={handleSubmit}>
+          <ButtonText>Sign Up</ButtonText>
+        </Button>
+        <Button onPress={() => props.navigation.goBack()}>
+          <ButtonText>Back</ButtonText>
+        </Button>
+      </ButtonRow>
+    </FlexScreenContainer>
   );
 };
 
-export default SignUpScreen;
+export default connect(
+  null,
+  { signUpUser }
+)(SignUpScreen);
