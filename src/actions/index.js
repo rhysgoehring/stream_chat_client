@@ -1,7 +1,7 @@
 import axios from "axios";
-import { NavigationActions } from "react-navigation";
 import { StreamChat } from "stream-chat";
 import { AsyncStorage } from "react-native";
+import NavigationService from "../navigation/navigationService";
 import { SIGN_IN, SIGN_UP } from "./types";
 import { STREAM_KEY } from "../config";
 
@@ -36,6 +36,8 @@ const signInUser = (username, password) => async dispatch => {
       type: SIGN_IN,
       user
     });
+
+    NavigationService.navigate("Tabs");
   } catch (err) {
     console.log("signInUser redux action error", err);
   }
@@ -73,6 +75,8 @@ const signUpUser = (username, password) => async dispatch => {
       type: SIGN_UP,
       user
     });
+
+    NavigationService.navigate("Tabs");
   } catch (err) {
     console.log("signUpUser redux action error", err);
   }
