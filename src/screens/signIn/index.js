@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { signInUser } from "../../actions";
+import { signInUser } from "../../actions/auth";
 import {
   FlexScreenContainer,
   HeaderText,

@@ -28,9 +28,9 @@ const FAText = styled.Text`
   text-align: center;
 `;
 
-const FloatingActionButton = props => (
+const FloatingActionButton = ({ onPress }) => (
   <FAContainer>
-    <FAButton style={{ elevation: 5 }} onPress={props.onPress}>
+    <FAButton style={{ elevation: 5 }} onPress={onPress}>
       <FAText style={{ textAlignVertical: "center" }}>+</FAText>
     </FAButton>
   </FAContainer>

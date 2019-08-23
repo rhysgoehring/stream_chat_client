@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import { SafeAreaView, View, Text } from "react-native";
 import {
   Chat,
@@ -9,6 +10,8 @@ import {
   Thread,
   ChannelPreviewMessenger
 } from "stream-chat-react-native";
+import { createChannel } from "../../actions";
+import NewChannelModal from "../../components/newChannelModal";
 import FloatingActionButton from "../../components/fab";
 import {
   FlexScreenContainer,
@@ -32,6 +35,8 @@ const options = {
 };
 
 const ChannelScreen = props => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [newChannelName, setNewChannelName] = useState("");
   return (
     <SafeAreaView>
       <Chat client={chatClient}>
@@ -45,11 +50,39 @@ const ChannelScreen = props => {
               console.log("channel", channel);
             }}
           />
-          <FloatingActionButton>+</FloatingActionButton>
+          <FloatingActionButton onPress={() => setModalVisible(true)}>
+            +
+          </FloatingActionButton>
+          <NewChannelModal
+            visible={modalVisible}
+            onRequestClose={() => {
+              setModalVisible(false);
+              setNewChannelName("");
+            }}
+            nameValue={newChannelName}
+            onChangeName={text => setNewChannelName(text)}
+            onPressBack={() => {
+              setModalVisible(false);
+              setNewChannelName("");
+            }}
+            onPressSubmit={() =>
+              props.createChannel(newChannelName, props.auth.user.username)
+            }
+          />
         </View>
       </Chat>
     </SafeAreaView>
   );
 };
 
-export default ChannelScreen;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth,
+    channels: state.channels
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { createChannel }
+)(ChannelScreen);
