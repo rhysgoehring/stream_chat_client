@@ -43,9 +43,9 @@ const ChannelScreen = props => {
         <View style={{ display: "flex", height: "100%", padding: 10 }}>
           <ChannelList
             Preview={ChannelPreviewMessenger}
-            filters={filters}
-            sort={sort}
-            options={options}
+            // filters={filters}
+            // sort={sort}
+            // options={options}
             onSelect={channel => {
               console.log("channel", channel);
             }}

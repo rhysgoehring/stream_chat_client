@@ -30,6 +30,13 @@ const signInUser = (username, password) => async dispatch => {
       data.chatToken
     );
 
+    const streamConnection = await chatClient.connect(
+      "a79e3nhhcekf",
+      null,
+      "57439"
+    );
+    console.log("streamConnection", streamConnection);
+
     dispatch({
       type: SIGN_IN,
       user
@@ -67,6 +74,12 @@ const signUpUser = (username, password) => async dispatch => {
       },
       data.chatToken
     );
+    const streamConnection = await chatClient.connect(
+      "a79e3nhhcekf",
+      null,
+      "57439"
+    );
+    console.log("streamConnection", streamConnection);
 
     dispatch({
       type: SIGN_UP,

@@ -25,14 +25,14 @@ const createChannel = (channelName, username) => async dispatch => {
       type: CREATE_CHANNEL,
       data
     });
-
     // Initialize channel through chatClient:
     const channel = chatClient.channel(data.channelType, data.channelId, {
-      name: data.channelName,
-      members: data.channelMembers
+      name: data.channelName
     });
+    const channelState = await channel.watch();
     console.log("newChannel: ", channel);
-    return channel;
+    console.log("channelState", channelState);
+    return { channel, channelState };
   } catch (err) {
     console.log("createChannel redux error", err);
   }
