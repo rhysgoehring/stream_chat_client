@@ -18,13 +18,21 @@ const createChannel = (channelName, username) => async dispatch => {
 
     // TODO: Handle errors
 
+    delete data._id;
     console.log("data", data);
-    delete data.channelMembers;
-    // TODO: Create channel through chat client:
+
     dispatch({
       type: CREATE_CHANNEL,
       data
     });
+
+    // Initialize channel through chatClient:
+    const channel = chatClient.channel(data.channelType, data.channelId, {
+      name: data.channelName,
+      members: data.channelMembers
+    });
+    console.log("newChannel: ", channel);
+    return channel;
   } catch (err) {
     console.log("createChannel redux error", err);
   }
