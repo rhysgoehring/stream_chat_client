@@ -8,8 +8,6 @@ const ROOT_URL = "http://10.0.0.113:4000";
 
 const createChannel = (channelName, username) => async dispatch => {
   try {
-    console.log("channelName", channelName);
-    console.log("username", username);
     // Check DB for channel:
     const { data } = await axios.post(`${ROOT_URL}/channels/new`, {
       channelName,
@@ -17,9 +15,6 @@ const createChannel = (channelName, username) => async dispatch => {
     });
 
     // TODO: Handle errors
-
-    delete data._id;
-    console.log("data", data);
 
     dispatch({
       type: CREATE_CHANNEL,
@@ -30,8 +25,6 @@ const createChannel = (channelName, username) => async dispatch => {
       name: data.channelName
     });
     const channelState = await channel.watch();
-    console.log("newChannel: ", channel);
-    console.log("channelState", channelState);
     return { channel, channelState };
   } catch (err) {
     console.log("createChannel redux error", err);
