@@ -8,12 +8,12 @@ import {
   KeyboardView
 } from "../../components/common";
 
-const HomeScreen = props => {
+const UsersScreen = props => {
   return (
     <FlexScreenContainer>
-      <HeaderText>Home Screen</HeaderText>
+      <HeaderText>Users Screen</HeaderText>
     </FlexScreenContainer>
   );
 };
 
-export default HomeScreen;
+export default UsersScreen;

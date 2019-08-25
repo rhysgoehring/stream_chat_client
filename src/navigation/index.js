@@ -10,7 +10,7 @@ import LandingScreen from "../screens/landing";
 import SignInScreen from "../screens/signIn";
 import SignUpScreen from "../screens/signUp";
 
-import HomeScreen from "../screens/home";
+import UsersScreen from "../screens/users";
 import ChannelScreen from "../screens/channels";
 import UserInfoScreen from "../screens/userInfo";
 
@@ -31,6 +31,15 @@ const AuthStack = createStackNavigator(
 
 const TabNav = createBottomTabNavigator(
   {
+    UsersScreen: {
+      screen: UsersScreen,
+      navigationOptions: {
+        tabBarLabel: "Users",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="users" size={18} color={tintColor} />
+        )
+      }
+    },
     ChannelScreen: {
       screen: ChannelScreen,
       navigationOptions: {
@@ -40,26 +49,17 @@ const TabNav = createBottomTabNavigator(
         )
       }
     },
-    HomeScreen: {
-      screen: HomeScreen,
-      navigationOptions: {
-        tabBarLabel: "Home",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="home" size={18} color={tintColor} />
-        )
-      }
-    },
     UserInfoScreen: {
       screen: UserInfoScreen,
       navigationOptions: {
-        tabBarLabel: "User Info",
+        tabBarLabel: "Settings",
         tabBarIcon: ({ tintColor }) => (
-          <Icon name="user-cog" size={18} color={tintColor} />
+          <Icon name="cog" size={18} color={tintColor} />
         )
       }
     }
   },
-  { headerMode: "none", initialRouteName: "HomeScreen" }
+  { headerMode: "none", initialRouteName: "ChannelScreen" }
 );
 
 const RootNavigator = createStackNavigator(
